@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* COLOR VARIABLES */
+:root {
+  --primary-green: #3a7d44;   /* main green */
+  --accent-pink: #d17b88;     /* accent pink */
+  --light-bg: #f9f9f9;        /* light background */
+  --dark-text: #333;          /* dark text */
+}
+
+/* BODY */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url("images/Fondo3.jpg") no-repeat center center fixed; /* use your background */
+  background-size: cover; /* make sure it covers full page */
+  color: var(--dark-text);
+  line-height: 1.6;
+  padding-top: 70px; /* space for fixed navbar */
+}
+/* NAVBAR */
+.navbar {
+  background: var(--primary-green);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 0;
+  z-index: 1000;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 30px;   /* <-- este es el espacio entre "Home", "About Me", "CV", "Portfolio" */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: var(--accent-pink);
+}
+
+/* MAIN CONTAINER */
+.container {
+  background: rgba(255, 255, 255, 0.9);
+  max-width: 1000px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* HEADINGS */
+h1, h2, h3 {
+  margin-bottom: 15px;
+  color: var(--primary-green);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+/* TEXT STYLES (About, CV, Portfolio)*/
+.about-me p, .portfolio p, .cv p {
+  font-family: 'Georgia', serif;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #444;
+}
+
+/* IMAGE */
+img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin: 20px 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+/* Profile picture */
+.profile-pic {
+  max-width: 200px;       /* limit size */
+  border-radius: 50%;     /* round image */
+  object-fit: cover;      /* keep proportions */
+}
+
+/* ABOUT ME LAYOUT */
+.about-layout {
+  display: flex;           /* text and image in a row */
+  align-items: flex-start; /* align top */
+  gap: 20px;               /* space between text and image */
+}
+
+.about-text {
+  flex: 1;                 /* text takes the space */
+}
+
+/* PORTFOLIO GRID */
+.project {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .about-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bubble-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+  .navbar ul li {
+    margin: 10px 0;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  .about-layout {
+    flex-direction: column; /* stack vertically on mobile */
+    align-items: center;
+  }
+.back-link {
+  text-align: center;
+  margin-top: 20px;
+}
+/* Bubble links container */
+.bubble-links {
+  display: flex;                /* put them in a row */
+  justify-content: center;      /* center horizontally */
+  gap: 20px;                    /* space between bubbles */
+  margin-top: 20px;            /* push down from navbar */
+}
+
+/* Each bubble style */
+.bubble {
+  display: inline-block;
+  padding: 20px 30px;
+  background: #fff;
+  color: var(--primary-green);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;          /* round edges -> bubble */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s;
+  font-size: 1.1rem;
+}
+
+.bubble:hover {
+  background: var(--primary-green);
+  color: #fff;
+  transform: scale(1.05);
+}
+/* Buttons basic style */
+.button {
+  display: inline-block;   /* makes link look like a button */
+  padding: 10px 20px;      /* space inside */
+  background: #fff;        /* white background */
+  color: var(--primary-green) !important; /* green text */
+  text-decoration: none !important;       /* no underline */
+  border: 2px solid var(--primary-green); /* green border */
+  border-radius: 8px;      /* rounded corners */
+  font-weight: bold;       
+  transition: all 0.3s;    /* smooth hover effect */
+}
+
+/* Hover effect */
+.button:hover {
+  background: var(--accent-pink); /* pink background */
+  color: #fff !important;         /* white text */
+  border-color: var(--accent-pink);
+}
+/* Footer */
+footer {
+  text-align: center;   /* center the text */
+  margin-top: 40px;     /* space above */
+  padding: 15px 0;      /* vertical space inside */
+  font-size: 14px;      /* smaller text */
+  color: #555;          /* grey text */
+}
+.cv a {
+  color: var(--primary-green);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cv a:hover {
+  color: var(--accent-pink); /* rosa cuando pasás el mouse */
+}
+/* BANNER (top section with background images */
+.banner {
+  text-align: center;
+  padding: 120px 20px 60px;
+  background: transparent; /* no background, so body image shows */
+  color: var(--primary-green); /* use your green for text */
+}
+/* GRID LAYOUT for Portfolio */
+.grid-portfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px; /* space between cards */
+  margin-top: 20px;
+}
+
+.project-card {
+  background: #fff; /* white background for contrast */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card h2 {
+  margin-bottom: 10px;
+  color: var(--primary-green);
+}
+
+.project-card p {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
